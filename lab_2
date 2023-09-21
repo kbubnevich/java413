@@ -1,0 +1,33 @@
+package lab_2;
+
+/*
+1. С помощью цикла вычислите значение выражения 2^n.
+ */
+
+import java.util.Scanner;
+
+public class zad_1 {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите n: ");
+        double n = scanner.nextDouble();
+        if (n < 0) {
+            int i = 0;
+            double rez = 2;
+            for (i = -1; i > n; i--) {
+
+                rez *= 2;
+                System.out.println("2 ^ " + (i - 1) + " = " + 1/rez);
+            }
+
+        } else {
+
+        int i = 0;
+        double rez = 2;
+        for (i = 1; i < n; i++) {
+            rez = rez * 2;
+            System.out.println("2 ^ " + (i + 1) + " = " + rez);
+        }
+    }
+    }
+}
