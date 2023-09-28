@@ -2,27 +2,27 @@ import java.util.Scanner;
 public class Zadanie_1
 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // сканнер для ввода с клавиатуры
         double res, c;
         int a,b;
-        boolean trig = true;
+        boolean trig = true; // триггер, срабатывающий при отсутствии решений
         System.out.print("Введите n: ");
         int n = scanner.nextInt();
         System.out.println("Введите значения  1 to 100:");
-        for (int i = 1; i <= 100; i++) {
-            for (int j = 1; j <= 100; j++) {
+        for (int i = 1; i <= 100; i++) { // перебор значений a
+            for (int j = 1; j <= 100; j++) { // перебор значений b
                 a = i;
                 b = j;
-                c = Math.pow(a, n) + Math.pow(b, n);
-                res = Math.pow(c, 1.0/n);
+                c = Math.pow(a, n) + Math.pow(b, n); //  c = a^n + b^n
+                res = Math.pow(c, 1.0/n); // результат = c^(1/n)
                 if (res == (int) res) {
                     System.out.println("a = " + a + ", b = " + b + ", result " + res);
-                    trig = false;
+                    trig = false; // в этом случае триггер не срабатывает
                 }
             }
         }
         if (trig) {
-            System.out.println("Решений нет!");
+            System.out.println("Решений нет!"); // если триггер не был отменен - решений нет
         }
     }
 }
