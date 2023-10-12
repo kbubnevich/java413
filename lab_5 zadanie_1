@@ -1,0 +1,39 @@
+package lab_5;
+
+import java.util.Random;
+
+public class Zadanie_1 {
+    public static void main(String[] args) {
+        Random rand = new Random(); // для случайного заполнения массива
+        int size = 25; // размер массива
+        int[] array = new int[size]; // создание одномерного массива размером 25
+        int minIndex = 0;
+        int maxIndex = 0;
+        int temp; // третья переменная для переноса
+
+        for (int i = 0; i < size; i++) {
+            array[i] = rand.nextInt(100);// заполнение массива случайными числами
+            if (array[i] > array[maxIndex]) { // сравниваем значение с максимальным
+                maxIndex = i;                 // обозначаем новый максимум
+            }
+            if (array[i] < array[minIndex]) { // тоже самое с минимальным
+                minIndex = i;
+            }
+            System.out.print(array[i] + " ");
+
+        }
+        temp = array[minIndex]; 
+        array[minIndex] = array[maxIndex]; // меняем местами макс и мин с помощью третьей переменной
+        array[maxIndex] = temp;
+        System.out.println();
+        System.out.println(" Итоговый массив: ");
+        for (int i = 0; i < size; i++) {
+            System.out.print (array[i] + " "); // выводим готовый ответ
+        }
+
+
+
+
+
+
+    }
